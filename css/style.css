@@ -1,0 +1,142 @@
+/* reset style */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #08090c;
+}
+
+.imgList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 50vw;
+    margin: 0px auto;
+
+
+}
+main{
+   position: relative
+}
+.imgList::before{
+      /* we want to draw a line, so no content needed */
+      content: '';
+
+      /* this sets the position and size of the pseudo-element */
+      position: absolute;
+      top: 50%;
+      width: 50%;
+      height: 21px;
+      background-color: #ED217C;
+      rotate: 45deg;
+      /* draw behind child elements */
+      z-index: -1;
+      
+}
+.imgList::after{
+    /* we want to draw a line, so no content needed */
+    content: '';
+
+    /* this sets the position and size of the pseudo-element */
+    position: absolute;
+    top: 50%;
+    width: 50%;
+    height: 21px;
+    background-color: #ED217C;
+    rotate: -45deg;
+    /* draw behind child elements */
+    z-index: -1;
+    
+}
+.imgList img {
+    width: 200px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 15vh 10px;
+    transition: 1s ease-in;
+    filter: grayscale(2%) sepia(1%) blur(1px);
+    -webkit-filter: grayscale(58%) sepia(3%) blur(1px);
+    -moz-filter: grayscale(58%) sepia(3%) blur(1px);
+    transition: 1s;
+}
+
+.imgList img:hover {
+    transform: scale(1.1);
+    transition: 1s;
+    flex-grow: 100;
+    transform: scale(1.2);
+    width: 500px;
+    z-index: 1;
+    box-shadow: inset -10px -100px 27px -15px rgba(0,0,0,0.1);
+    filter: grayscale(0%) sepia(0%) blur(0px);
+    -webkit-filter: grayscale(0%) sepia(0%) blur(0px);
+    -moz-filter: grayscale(0) sepia(0%) blur(0px);
+
+}
+
+.contentImg1:hover {
+   
+    box-shadow: inset -10px -100px 27px -15px rgba(0,0,0,0.1);
+
+}
+
+.imgList img:hover + h4 {
+    display: flex;
+    
+    z-index: 22;
+    box-shadow: inset -10px -100px 27px -15px rgba(0,0,0,0.6);
+    font-size: 20px;
+    font-weight: 800;
+    border-radius: 4px;
+    text-align: center;
+
+
+}
+
+.imgList img:hover .contentImg1,
+i {
+    display: flex;
+    transition: 1s ease-in;
+    z-index: 22;
+
+
+}
+
+.contentImg1 {
+    position: relative;
+    color: aliceblue;
+    display: flex;
+}
+
+.contentImg1 h4 {
+    position: absolute;
+    top: 550px;
+    left: 100px;
+    display: none;
+    transition: 1s ease-in;
+    z-index: 122;
+}
+
+.contentImg1 i {
+    position: absolute;
+    top: 540px;
+    left: 15px;
+    padding: 20px;
+    background: #000000;
+    border-radius: 50%;
+
+
+}
+
+.contentImg1:hover i {
+    background: #ffffff;
+    color: #000000;
+    transition: 1s ease-in;
+}
